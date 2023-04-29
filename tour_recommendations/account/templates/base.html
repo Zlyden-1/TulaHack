@@ -5,34 +5,30 @@
     <title>{% block title %}{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/base.css' %}">
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </head>
 <body>
-<div id="header">
-    <span class="logo">Закладки</span>
-    {% if request.user.is_authenticated %}
-    <ul class="menu">
-        <li>
-        <a href="{% url 'dashboard' %}">Мой личный кабинет</a>
-        </li>
-        <li>
-        <a href="#">Фотографии</a>
-        </li>
-        <li>
-        <a href="#">Люди</a>
-        </li>
-    </ul>
-    {% endif %}
-    <span class="user">
- {% if request.user.is_authenticated %}
- Hello {{ request.user.first_name|default:request.user.username }},
- <a href="{% url 'logout' %}">Выход</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div  class="p-4 mb-2 bg-f3f3f3 text-black">
+  <ul class="navbar-nav mr-auto">
+        <div class="nav-logo-p">
+        <a class="nav-logo" href=" url 'dashboard' "><b>EasyGetAway</b></a></div>
+        <div class="nav-index-p">
+        <a  class="nav-index" href="#">главная</a></div>
+        <div class="nav-event-p">
+        <a class="nav-event" href="#">мероприятия</a></div>
+        {% if request.user.is_authenticated %}
+        <div class="nav-exit-p">
+        <a class="nav-exit" href="#">выход</a></div>
         {% else %}
- <a href="{% url 'login' %}">Вход</a>
+        <div class="nav-enter-p">
+        <a class="nav-enter" href="#">вход</a></div>
+        <div class="nav-reg-p">
+        <a class="nav-reg" href="#">регистрация</a></div>
         {% endif %}
- </span>
-</div>
-<div id="content">
+  </ul>
+<div>
     {% block content %}
     {% endblock %}
 </div>

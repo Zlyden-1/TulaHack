@@ -75,7 +75,8 @@ class LoggedEventsListView(ListView):
 
 
 class EventDetailView(DetailView):
-    queryset = Events.objects.all()
+    model = Events
+    template_name = "recommendations/details.html"
 
     def get_object(self, *args, **kwargs):
         obj = super().get_object()

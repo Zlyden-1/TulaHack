@@ -91,3 +91,47 @@ text-decoration: none;
 color:rgba(0, 0, 0, 1);
   text-decoration: none;
 }
+
+
+.nav-chat-star {
+    width: 80px; 
+    height: 80px; 
+    margin: 10px;
+    background: #72AF6D;
+    position: fixed;
+    transform: rotate(20deg);
+    border-radius:12px;
+    }
+.nav-chat-star:before {
+    content: "";
+    height: 80px; 
+    width: 80px;
+    background: inherit;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    transform: rotate(135deg);
+    border-radius:12px;
+    }
+.nav-chat {
+      top: 250px;
+      left: 300px;
+        border:3px solid #000;
+    border-top-right-radius:120%;
+    border-top-left-radius:120%;
+    border-bottom-right-radius:120%;
+        border-radius:;
+        height:10px;
+        width:20px;
+        padding:20px;
+        position:relative;
+    }
+.nav-chat-img{
+      transform: translate(-2050px,-2030px);
+      scale:10%;
+    }
+.nav-img-and-star{
+      position:fixed;
+      top:80%;
+      left:85%;
+    }

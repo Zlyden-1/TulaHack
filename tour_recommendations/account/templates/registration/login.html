@@ -7,9 +7,9 @@
     Логин и пароль не подходят. Пожалуйста, попробуйте еще раз.
 </p>
 {% endif %}
-<p>Please, use the following form to log-in.
- If you don't have an account
- <a href="{% url 'register' %}">register here</a>.</p>
+<p>Пожалуйста, используйте форму для входа в систему.
+ Если у вас нет аккаунта:
+ <a href="{% url 'register' %}">регистрация</a>.</p>
 <div class="login-form">
     <form action="{% url 'login' %}" method="post">
         {{ form.as_p }}
@@ -19,7 +19,7 @@
     </form>
     <p>
         <a href="{% url 'password_reset' %}">
-        Forgotten your password?
+        Забыли пароль?
         </a>
     </p>
 </div>

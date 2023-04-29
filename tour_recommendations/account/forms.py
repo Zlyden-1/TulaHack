@@ -39,5 +39,4 @@ class ProfileEditForm(forms.ModelForm):
         widgets = {'categories': forms.SelectMultiple()}
 
 
-class PromptForm(forms.Form):
-    prompt = forms.CharField()
+

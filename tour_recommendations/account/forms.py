@@ -37,3 +37,7 @@ class ProfileEditForm(forms.ModelForm):
         model = Profile
         fields = ['date_of_birth', 'photo', 'categories']
         widgets = {'categories': forms.SelectMultiple()}
+
+
+class PromptForm(forms.Form):
+    prompt = forms.CharField()

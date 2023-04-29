@@ -1,25 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-</head>
-<body>
-<!--Test div, delete-->
-<div class="card">
-  <div class="card-body">
-    <h4 class="card-title">Заголовок карточки</h4>
-    <h6 class="card-subtitle mb-2 text-muted">Подзаголовок карточки</h6>
-    <p class="card-text">
-      Пример текста, который будет основан на названии карточки
-и составит основную часть содержимого карточки.
-    </p>
-    <a href="#!" class="card-link">Ссылка на карточку</a>
-    <a href="#!" class="card-link">Ещё одна ссылка</a>
-  </div>
+{% extends "base.html" %}
+{% block title %}Личный кабинет{% endblock %}
+{% block content %}
+<h1>Досуг для тебя</h1>
+{% if objects %}
+<div class="card-group">
+    <div class="row">
+        {% for object in objects %}
+        <div class="col-md-4">
+            <div class="w-100 h-100 card">
+                <img class="card-img-top" src="{{ object.image.url }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ object.description | safe }}</p>
+                    <a href="" class="card-link">Записаться на мероприятие</a>
+                    <p class="card-text">Состоится {{ object.date }}</p>
+                    <p class="card-text">Регистрация до {{ object.end_reg }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
-</body>
-</html>
+{% endif %}
+{% endblock %}

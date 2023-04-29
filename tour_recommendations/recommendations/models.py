@@ -10,7 +10,7 @@ class Events(models.Model):
     end_reg = models.DateTimeField()
     categories = models.ManyToManyField(to='Category')
     description = models.TextField()
-    image = models.ImageField()
+    image = models.ImageField(upload_to='events/images')
 
 
 class Category(models.Model):

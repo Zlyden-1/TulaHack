@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.shortcuts import get_object_or_404
@@ -98,3 +99,12 @@ class EventUpdateView(UpdateView):
 class EventDeleteView(DeleteView):
     model = Events
     success_url = reverse_lazy('event-list')
+
+
+def register_to_event(request, pk):
+    profile = request.user.profile
+    event = Events.objects.get(pk=pk)
+    profile.events.add(event)
+    print(profile.events.all())
+    return HttpResponseRedirect(f'/event/{pk}')
+

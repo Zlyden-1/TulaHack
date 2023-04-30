@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}
+Чат-бот
+{% endblock %}
 {% block content %}
-<title>Чат-бот</title>
 <h3>Напишите сообщение</h3>
 <form method="post">
     {% csrf_token %}

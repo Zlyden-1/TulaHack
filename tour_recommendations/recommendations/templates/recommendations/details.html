@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Личный кабинет{% endblock %}
 {% block content %}
-<h1 class="mt-0 mb-1">{{ object.title }}</h1>
+<h1 class="title">{{ object.title }}</h1>
 <h3 class="category">{{ object.category }}</h3>
 <h5 class="place">{{ object.city }}, {{ object.location }}</h5>
-<h5 class="card-text">Состоится {{ object.date }}</h5>
-<img class="ml-3" width="600" src="{{ object.image.url }}" alt="Card image cap">
+<h5 class="text">Состоится {{ object.date }}</h5>
+<img class="img" width="600" src="{{ object.image.url }}" alt="Card image cap">
+<p class="text">{{ object.description | safe }}</p>
 <a href="" class="reg">Зарегистрироваться</a>
-<p class="card-text">{{ object.description | safe }}</p>
 {% endblock %}
